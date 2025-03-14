@@ -1,0 +1,15 @@
+name: jax-mac
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy=1.26.4        # Array operations
+  - scipy=1.12.0        # Scientific computing
+  - matplotlib=3.8.4    # Visualization
+  - pytest=8.0.0        # Testing framework
+  - jupyterlab          # Notebooks
+  - pip:                # JAX for macOS (CPU-only)
+    - jax==0.4.26
+    - jaxlib==0.4.26
+    - flax==0.8.1
