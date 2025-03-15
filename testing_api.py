@@ -95,7 +95,7 @@ def run_openai(model: str, temperature: float):
 
     print(f"✅ Results written to {output_file}")
 
-def load_ds1000(file_path="jax_M0_questions.json"):
+def load_ds1000(file_path="jax_M0_questions_updated.json.json"):
     if not os.path.exists(file_path):
         print(f"❌ Dataset not found at {file_path}")
         sys.exit(1)
