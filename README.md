@@ -1,10 +1,10 @@
 # DS-1000 JAX Code Evaluation System
 
-A robust pipeline for evaluating code submissions against **JAX-converted questions from the DS-1000 benchmark**, originally containing NumPy problems that have been adapted to JAX syntax and semantics.
+A pipeline for evaluating code submissions against **JAX-converted questions from the DS-1000 benchmark**, originally containing NumPy problems that have been adapted to JAX syntax and semantics.
 
 ## 📋 Overview
 
-This system evaluates AI-generated code solutions for JAX programming problems derived from the DS-1000 benchmark. Key components:
+This system evaluates LLM-generated code solutions for JAX programming problems derived from the DS-1000 (modified)benchmark. Key components:
 
 - **Dataset Origin**: Contains questions converted from NumPy to JAX from the original DS-1000 benchmark
 - **Secure Sandboxing**: Docker containers for isolated execution
@@ -18,7 +18,7 @@ This system evaluates AI-generated code solutions for JAX programming problems d
    - Network isolation
    - Automatic cleanup
 
-2. **Intelligent Preprocessing**
+2. **Preprocessing**
    - Markdown stripping
    - Code sanitization
    - Indentation correction
@@ -43,7 +43,7 @@ This system evaluates AI-generated code solutions for JAX programming problems d
 
 ### Installation
 ```bash
-git clone https://github.com/yourusername/jax-code-evaluator.git
+git clone https://github.com/PavanTaddi9/Validation_sandbox.git
 cd jax-code-evaluator
 
 # Build Docker image
