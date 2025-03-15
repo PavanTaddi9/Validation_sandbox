@@ -1,6 +1,7 @@
 import os
 import json
 import subprocess
+import traceback
 from typing import Dict, List, Any
 import concurrent.futures as cfuts
 from tqdm import tqdm
@@ -24,23 +25,12 @@ def load_dataset() -> List[Dict]:
     """Load dataset from JSON file"""
     dataset_path = os.path.join(CONFIG["base_dir"], CONFIG["dataset_file"])
     with open(dataset_path, 'r') as f:
-        data = json.load(f)
-    
-    if not isinstance(data, list):
-        raise ValueError("Dataset should be a list of problems")
-    
-    required_keys = {"prompt", "reference_code", "metadata", "code_context"}
-    for idx, item in enumerate(data):
-        missing = required_keys - item.keys()
-        if missing:
-            raise ValueError(f"Problem {idx} missing keys: {missing}")
-    
-    return data
+        return json.load(f)
 
 def load_answers() -> Dict[int, str]:
     """Load answers from JSONL file"""
-    answers_path = os.path.join(CONFIG["base_dir"], CONFIG["answers_file"])
     answers = {}
+    answers_path = os.path.join(CONFIG["base_dir"], CONFIG["answers_file"])
     
     with open(answers_path, 'r') as f:
         for line in f:
@@ -53,20 +43,31 @@ def load_answers() -> Dict[int, str]:
     
     return answers
 
-def preprocess_code(raw_code: str) -> str:
-    """Clean code from markdown blocks"""
-    code = raw_code.strip()
-    if '```python' in code:
-        code = code.split('```python')[1].split('```')[0]
-    return code.strip()
+def sanitize_code(code: str) -> str:
+    """Clean code while preserving existing indentation"""
+    code = code.replace('```python', '').replace('```', '')
+    code = code.replace('BEGIN SOLUTION', '').replace('END SOLUTION', '')
+    return '\n'.join([line.rstrip() for line in code.split('\n') if line.strip()])
+
+def get_indentation_level(context: str) -> str:
+    """Detect indentation at the [insert] point"""
+    for line in context.split('\n'):
+        if '[insert]' in line:
+            return line.split('[insert]')[0]
+    return ''
 
 def build_test_program(problem: Dict, solution: str) -> str:
-    """Construct executable test code"""
+    """Insert solution with proper context indentation"""
     context = problem["code_context"]
-    return context.replace('[insert]', solution)
+    indent = get_indentation_level(context)
+    
+    # Indent solution lines according to context
+    indented_solution = '\n'.join([f"{indent}{line}" for line in solution.split('\n')])
+    
+    return context.replace('[insert]', indented_solution)
 
 def execute_in_docker(code: str) -> Dict[str, Any]:
-    """Run code in Docker container"""
+    """Execute code in Docker container with diagnostics"""
     try:
         cmd = [
             'docker', 'run', '--rm', '-i',
@@ -83,17 +84,23 @@ def execute_in_docker(code: str) -> Dict[str, Any]:
             timeout=CONFIG["timeout"]
         )
         
-        return {"status": "success" if result.returncode == 0 else "error",
-                "output": result.stdout.decode(),
-                "error": result.stderr.decode()}
+        return {
+            "status": "success" if result.returncode == 0 else "error",
+            "stdout": result.stdout.decode(),
+            "stderr": result.stderr.decode(),
+            "exit_code": result.returncode
+        }
     except subprocess.TimeoutExpired:
-        return {"status": "error", "reason": "Timeout"}
+        return {
+            "status": "error",
+            "stdout": "",
+            "stderr": f"Timeout after {CONFIG['timeout']}s",
+            "exit_code": -1
+        }
 
-def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> Dict[str, float]:
-    """Main evaluation process"""
+def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> List[Dict]:
+    """Main evaluation with detailed error tracking"""
     results = []
-    total_tests = 0
-    passed_tests = 0
     
     with cfuts.ThreadPoolExecutor(max_workers=CONFIG["max_workers"]) as executor:
         futures = []
@@ -102,48 +109,47 @@ def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> Dict[str,
             raw_code = answers.get(problem_id, "")
             
             try:
-                clean_code = preprocess_code(raw_code)
+                clean_code = sanitize_code(raw_code)
                 test_program = build_test_program(problem, clean_code)
-                futures.append(executor.submit(execute_in_docker, test_program))
+                futures.append((problem, executor.submit(execute_in_docker, test_program)))
             except Exception as e:
-                futures.append(executor.submit(
-                    lambda: {"status": "error", "reason": str(e)}
-                ))
+                results.append({
+                    "problem_id": problem_id,
+                    "error": f"Preparation failed: {str(e)}",
+                    "trace": traceback.format_exc()
+                })
 
-        for idx, future in enumerate(tqdm(futures, total=len(futures))):
-            problem = dataset[idx]
-            test_case_cnt = problem["metadata"]["test_case_cnt"]
+        for problem, future in tqdm(futures, total=len(futures)):
+            problem_id = problem["metadata"]["problem_id"]
             result = future.result()
             
-            passed = result["status"] == "success"
-            total_tests += test_case_cnt
-            passed_tests += test_case_cnt if passed else 0
-            results.append(passed)
+            error_info = {
+                "problem_id": problem_id,
+                "test_case_count": problem["metadata"]["test_case_cnt"],
+                "solution_code": answers.get(problem_id, "")[:500],
+                **result
+            }
+            
+            results.append(error_info)
+    
+    return results
 
-    return {
-        "total_problems": len(dataset),
-        "passed_problems": sum(results),
-        "problem_accuracy": sum(results)/len(dataset),
-        "test_case_accuracy": passed_tests/max(total_tests, 1)
-    }
-
-def save_results(results: Dict[str, float]):
-    """Save evaluation results"""
-    report = f"""Evaluation Report for {CONFIG['model_name']}
-Total Problems: {results['total_problems']}
-Passed Problems: {results['passed_problems']}
-Problem Accuracy: {results['problem_accuracy']*100:.1f}%
-Test Cases Passed: {results['test_case_accuracy']*100:.1f}%"""
+def save_detailed_report(results: List[Dict]):
+    """Generate comprehensive error report"""
+    report_path = os.path.join(
+        CONFIG["base_dir"],
+        CONFIG["results_dir"],
+        f"{CONFIG['model_name']}_detailed_report.json"
+    )
     
-    results_dir = os.path.join(CONFIG["base_dir"], CONFIG["results_dir"])
-    os.makedirs(results_dir, exist_ok=True)
+    with open(report_path, 'w') as f:
+        json.dump(results, f, indent=2)
     
-    with open(os.path.join(results_dir, f"{CONFIG['model_name']}_results.txt"), 'w') as f:
-        f.write(report)
-    
-    print(report)
+    print(f"Report saved to: {report_path}")
 
 if __name__ == "__main__":
+    os.makedirs(os.path.join(CONFIG["base_dir"], CONFIG["results_dir"]), exist_ok=True)
+    
     try:
         print("Loading dataset...")
         dataset = load_dataset()
@@ -151,11 +157,12 @@ if __name__ == "__main__":
         print("Loading answers...")
         answers = load_answers()
         
-        print("Evaluating submissions...")
+        print("Starting evaluation...")
         results = evaluate_problems(dataset, answers)
         
-        print("\nSaving results...")
-        save_results(results)
+        print("Saving report...")
+        save_detailed_report(results)
         
     except Exception as e:
-        print(f"\nError: {str(e)}")
+        print(f"Fatal error: {str(e)}")
+        print(traceback.format_exc())
