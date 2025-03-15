@@ -1,1982 +1,3082 @@
 [
   {
     "problem_id": 0,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 4,
-    "solution_code": "```python\nresult = a.shape\nEND SOLUTION",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "solution_code": "```python\nresult = a.shape\n```",
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 1,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
-    "solution_code": "```python\nx = x[~jnp.isnan(x)]",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "solution_code": "```python\nx = x[~jnp.isnan(x)]```",
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 2,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
-    "solution_code": "```python\nx = jnp.where(jnp.isnan(x), jnp.inf, x)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "solution_code": "```python\nx = jnp.where(jnp.isnan(x), jnp.inf, x)```",
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 3,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nresult = [list(filter(lambda val: not jnp.isnan(val), row)) for row in x]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 4,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nb = jnp.eye(jnp.max(a) + 1)[a]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 5,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nb = jnp.eye(jnp.max(a) + 1)[a]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 6,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nb = jnp.eye(len(a))[a - a.min()]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 7,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nb = jnp.eye(len(a))[jnp.argsort(jnp.argsort(a))]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 23\n    return b\nIndentationError: unexpected indent\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 23\n    return b\nIndentationError: unexpected indent\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 8,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nb = jnp.eye(jnp.max(a) + 1)[a]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 9,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.percentile(a, p)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 10,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
-    "solution_code": "```python\nB = A.reshape(-1, ncol)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "solution_code": "```python\nB = A.reshape(-1, ncol)\n```",
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 11,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
-    "solution_code": "```python\nB = A.reshape(nrow, -1)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "solution_code": "```python\nB = A.reshape(nrow, -1)\n```",
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 12,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
-    "solution_code": "```python\nB = A[:(A.size // ncol) * ncol].reshape(-1, ncol)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "solution_code": "```python\nB = A[:(A.size // ncol) * ncol].reshape(-1, ncol)\n```",
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 13,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nB = jnp.reshape(jnp.flip(A), (-1, ncol))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 14,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.concatenate((jnp.full((shift,), jnp.nan), a[:-shift])) if shift > 0 else jnp.concatenate((a[-shift:], jnp.full((-shift,), jnp.nan)))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 15,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndef shift(arr, shift):\n    if shift > 0:\n        return jnp.pad(arr, ((0, 0), (shift, 0)), mode='constant', constant_values=jnp.nan)[:, :-shift]\n    elif shift < 0:\n        return jnp.pad(arr, ((0, 0), (0, -shift)), mode='constant', constant_values=jnp.nan)[:, -shift:]\n    else:\n        return arr\n\nresult = shift(a, shift)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 65\n    code = exec_context.replace(\"def shift(arr, shift):\n                                ^\nSyntaxError: unterminated string literal (detected at line 65)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 66\n    code = exec_context.replace(\"def shift(arr, shift):\n                                ^\nSyntaxError: unterminated string literal (detected at line 66)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 16,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndef shift(arr, shifts):\n    max_len = arr.shape[1]\n    result = jnp.full(arr.shape, jnp.nan)\n    \n    for i, shift_val in enumerate(shifts):\n        if shift_val > 0:\n            result = result.at[i, shift_val:max_len].set(arr[i, :max_len - shift_val])\n        elif shift_val < 0:\n            result = result.at[i, :max_len + shift_val].set(arr[i, -shift_val:max_len])\n        else:\n            result = result.at[i].set(arr[i])\n    \n    return result\n\nresult = shift(a, shift)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 71\n    code = exec_context.replace(\"def shift(arr, shifts):\n                                ^\nSyntaxError: unterminated string literal (detected at line 71)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 74\n    code = exec_context.replace(\"def shift(arr, shifts):\n                                ^\nSyntaxError: unterminated string literal (detected at line 74)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 17,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nkey = jax.random.PRNGKey(0)  # Set a fixed seed for reproducibility\nr_old = jax.random.randint(key, (100, 2000), 0, 3) - 1\nr_new = jax.random.randint(key, (100, 2000), 0, 3) - 1\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"key = jax.random.PRNGKey(0)  # Set a fixed seed for reproducibility\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"key = jax.random.PRNGKey(0)  # Set a fixed seed for reproducibility\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 18,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.argmax(a, axis=None)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 19,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.ravel_multi_index(jnp.unravel_index(jnp.argmin(a), a.shape), a.shape)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 20,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.unravel_index(jnp.argmax(a, axis=None), a.shape, order='F')\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 21,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.unravel_index(jnp.argmax(a), a.shape)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 22,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n    result = jnp.argmax(a, axis=None)\n    ### END SOLUTION\n    return result\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"    result = jnp.argmax(a, axis=None)\n                                ^\nSyntaxError: unterminated string literal (detected at line 43)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"result = jnp.argmax(a, axis=None)\n                                ^\nSyntaxError: unterminated string literal (detected at line 43)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 23,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.unravel_index(jnp.argsort(a, axis=None)[-2], a.shape)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 24,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = a[:, ~jnp.isnan(a).any(axis=0)]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 25,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = a[~jnp.isnan(a).any(axis=1)]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 26,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array(a)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 27,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = a[:, permutation]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 28,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[permutation]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 29,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.unravel_index(jnp.argmin(a), a.shape)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 30,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.unravel_index(jnp.argmax(a), a.shape)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 31,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nresult = jnp.argwhere(a == jnp.min(a))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 32,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.sin(jnp.radians(degree))",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 33,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.cos(jnp.radians(degree))",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 34,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nresult = jnp.where(jnp.sin(jnp.radians(number)) > jnp.sin(number), 0, 1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 35,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.degrees(jnp.arcsin(value))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 36,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.pad(A, (0, length - A.size), mode='constant')\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 37,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\ndef pad(A, length):\n    return jnp.pad(A, (0, max(0, length - A.size)), mode='constant')\n\nresult = pad(A, 8)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 51\n    code = exec_context.replace(\"def pad(A, length):\n                                ^\nSyntaxError: unterminated string literal (detected at line 51)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"def pad(A, length):\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 38,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.power(a, power)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 39,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n    return jnp.power(a, power)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 40,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nfrom math import gcd\n\ndef reduce_fraction(numerator, denominator):\n    common_divisor = gcd(numerator, denominator)\n    return (numerator // common_divisor, denominator // common_divisor)\n\nresult = reduce_fraction(numerator, denominator)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"from math import gcd\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 51\n    code = exec_context.replace(\"from math import gcd\n                                ^\nSyntaxError: unterminated string literal (detected at line 51)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 41,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\n    gcd = jnp.gcd(numerator, denominator)\n    return (numerator // gcd, denominator // gcd)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"    gcd = jnp.gcd(numerator, denominator)\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"gcd = jnp.gcd(numerator, denominator)\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 42,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 4,
     "solution_code": "```python\nif denominator == 0:\n    result = (float('nan'), float('nan'))\nelse:\n    gcd = jnp.gcd(numerator, denominator)\n    result = (numerator // gcd, denominator // gcd)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 58\n    code = exec_context.replace(\"if denominator == 0:\n                                ^\nSyntaxError: unterminated string literal (detected at line 58)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 58\n    code = exec_context.replace(\"if denominator == 0:\n                                ^\nSyntaxError: unterminated string literal (detected at line 58)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 43,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = (a + b + c) / 3",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 44,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.maximum(jnp.maximum(a, b), c)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 45,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.diag_indices(a.shape[0], k=a.shape[1]-1)]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 46,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.arange(a.shape[0]), a.shape[1] - 1 - jnp.arange(a.shape[0])]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 47,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([a[jnp.arange(a.shape[0]), a.shape[1] - 1 - jnp.arange(a.shape[0])],\n                   a[jnp.arange(a.shape[0]), jnp.arange(a.shape[1])]])\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"result = jnp.array([a[jnp.arange(a.shape[0]), a.shape[1] - 1 - jnp.arange(a.shape[0])],\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"result = jnp.array([a[jnp.arange(a.shape[0]), a.shape[1] - 1 - jnp.arange(a.shape[0])],\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 48,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nrows, cols = a.shape\ndiagonal_indices = [(i, cols - 1 - i) for i in range(min(rows, cols))]\nresult = jnp.array([a[diagonal_indices[i]] for i in range(len(diagonal_indices))])\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"rows, cols = a.shape\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"rows, cols = a.shape\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 49,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = X.flatten().tolist()\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 50,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = X.flatten(order='C').tolist()\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 51,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\n    result = []\n    for row in X:\n        for element in row:\n            result.append(element)\n    return result\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 46\n    code = exec_context.replace(\"    result = []\n                                ^\nSyntaxError: unterminated string literal (detected at line 46)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 46\n    code = exec_context.replace(\"result = []\n                                ^\nSyntaxError: unterminated string literal (detected at line 46)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 52,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = [X[i, j] for j in range(X.shape[1]) for i in range(X.shape[0])]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 53,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([int(digit) for digit in mystr])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 54,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.cumsum(a[:, col] * multiply_number)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 55,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.cumsum(a[row] * multiply_number)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 56,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.prod(a[row] / divide_number)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 57,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nfrom jax import linalg\n\n# Perform QR decomposition\nq, r = linalg.qr(a.T)\n\n# Identify linearly independent vectors\nindependent_indices = jnp.where(jnp.abs(r.diagonal()) > 1e-10)[0]\nresult = q[:, independent_indices].T\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 76\n    code = exec_context.replace(\"from jax import linalg\n                                ^\nSyntaxError: unterminated string literal (detected at line 76)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 78\n    code = exec_context.replace(\"from jax import linalg\n                                ^\nSyntaxError: unterminated string literal (detected at line 78)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 58,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = a.shape[1]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 59,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nimport jax.numpy as jnp\nimport scipy.stats\n\n# Calculate means and standard deviations\nmean_a = jnp.mean(a)\nmean_b = jnp.mean(b)\nstd_a = jnp.std(a, ddof=1)\nstd_b = jnp.std(b, ddof=1)\n\n# Calculate the sizes\nn_a = a.size\nn_b = b.size\n\n# Calculate the t-statistic\nt_stat = (mean_a - mean_b) / jnp.sqrt((std_a**2 / n_a) + (std_b**2 / n_b))\n\n# Calculate the degrees of freedom\ndf = (std_a**2 / n_a + std_b**2 / n_b)**2 / ((std_a**2 / n_a)**2 / (n_a - 1) + (std_b**2 / n_b)**2 / (n_b - 1))\n\n# Calc",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 56\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 56)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 61\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 61)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 60,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n# Remove NaNs from both samples\na_clean = a[~jnp.isnan(a)]\nb_clean = b[~jnp.isnan(b)]\n\n# Calculate means and standard deviations\nmean_a = jnp.mean(a_clean)\nmean_b = jnp.mean(b_clean)\nstd_a = jnp.std(a_clean, ddof=1)\nstd_b = jnp.std(b_clean, ddof=1)\n\n# Calculate sample sizes\nn_a = a_clean.size\nn_b = b_clean.size\n\n# Calculate the pooled standard deviation\npooled_std = jnp.sqrt(((n_a - 1) * std_a**2 + (n_b - 1) * std_b**2) / (n_a + n_b - 2))\n\n# Calculate the t-statistic\nt_stat = (mean_a -",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 64\n    code = exec_context.replace(\"# Remove NaNs from both samples\n                                ^\nSyntaxError: unterminated string literal (detected at line 64)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 70\n    code = exec_context.replace(\"# Remove NaNs from both samples\n                                ^\nSyntaxError: unterminated string literal (detected at line 70)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 61,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\n# Calculate the pooled standard deviation\npooled_std = jnp.sqrt(((anobs - 1) * avar + (bnobs - 1) * bvar) / (anobs + bnobs - 2))\n\n# Calculate the t-statistic\nt_stat = (amean - bmean) / (pooled_std * jnp.sqrt(1/anobs + 1/bnobs))\n\n# Calculate the degrees of freedom\ndf = anobs + bnobs - 2\n\n# Calculate the p-value for a two-tailed test\np_value = 2 * (1 - scipy.stats.t.cdf(jnp.abs(t_stat), df))\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"# Calculate the pooled standard deviation\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 55\n    code = exec_context.replace(\"# Calculate the pooled standard deviation\n                                ^\nSyntaxError: unterminated string literal (detected at line 55)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 62,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\noutput = A[~jnp.isin(A, B).any(axis=1)]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 63,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\noutput = jnp.concatenate([A[~jnp.isin(A, B).any(axis=1)], B[~jnp.isin(B, A).any(axis=1)]])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 64,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nc = jnp.take_along_axis(b, sort_indices[:, :, None], axis=0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 65,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nc = jnp.take_along_axis(b, sort_indices[:, :, None], axis=0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 66,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nc = jnp.take_along_axis(b, sort_indices[:, :, None], axis=0)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 20\n    return c\nIndentationError: unexpected indent\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 20\n    return c\nIndentationError: unexpected indent\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 67,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nsorted_indices = jnp.argsort(jnp.sum(a, axis=(1, 2)))\nresult = b[sorted_indices]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"sorted_indices = jnp.argsort(jnp.sum(a, axis=(1, 2)))\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"sorted_indices = jnp.argsort(jnp.sum(a, axis=(1, 2)))\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 68,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.delete(arr, 2, axis=1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 69,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.delete(arr, 2, axis=0)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 70,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.delete(arr, [0, 2], axis=1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 71,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nvalid_indices = del_col[del_col < a.shape[1]]\nresult = a[:, valid_indices]\nresult = result[:, jnp.arange(result.shape[1]) != 0]  # Keep only the 3rd column\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 45\n    code = exec_context.replace(\"valid_indices = del_col[del_col < a.shape[1]]\n                                ^\nSyntaxError: unterminated string literal (detected at line 45)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 45\n    code = exec_context.replace(\"valid_indices = del_col[del_col < a.shape[1]]\n                                ^\nSyntaxError: unterminated string literal (detected at line 45)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 72,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.insert(a, pos, element)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 73,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.insert(a, pos, jnp.array(element), axis=0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 74,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n    return jnp.concatenate((a[:pos], jnp.array([element]), a[pos:]))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 75,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.insert(a, pos, element, axis=0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 76,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = [jnp.array(arr) for arr in array_of_arrays]  # Deep copy each array in the list\nEND SOLUTION",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"result = [jnp.array(arr) for arr in array_of_arrays]  # Deep copy each array in the list\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 77,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 5,
     "solution_code": "```python\nresult = jnp.all(a == a[0], axis=0)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 78,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 5,
     "solution_code": "```python\nresult = jnp.all(a == a[:, 0:1], axis=1)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 79,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 5,
     "solution_code": "```python\n    return jnp.all(jnp.equal(a, a[0, :]), axis=1).all()\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 80,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\nfrom scipy.integrate import simps\n\n# Create a meshgrid for x and y\nX, Y = jnp.meshgrid(x, y)\n\n# Define the function to integrate\nZ = (jnp.cos(X))**4 + (jnp.sin(Y))**2\n\n# Perform the 2D Simpson's rule integration\nresult = simps(simps(Z, y), x)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 51\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 51)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 81,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n    z = (jnp.cos(x[:, None])**4 + jnp.sin(y[None, :])**2)\n    return jnp.sum(z) * (example_x[1] - example_x[0]) * (example_y[1] - example_y[0]) / 4\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 47\n    code = exec_context.replace(\"    z = (jnp.cos(x[:, None])**4 + jnp.sin(y[None, :])**2)\n                                ^\nSyntaxError: unterminated string literal (detected at line 47)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 47\n    code = exec_context.replace(\"z = (jnp.cos(x[:, None])**4 + jnp.sin(y[None, :])**2)\n                                ^\nSyntaxError: unterminated string literal (detected at line 47)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 82,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndef ecdf(x):\n    # Sort the input array\n    x_sorted = jnp.sort(x)\n    # Calculate the cumulative distribution function\n    n = x_sorted.size\n    return jnp.arange(1, n + 1) / n\n\nresult = ecdf(grades)(grades)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 81\n    code = exec_context.replace(\"def ecdf(x):\n                                ^\nSyntaxError: unterminated string literal (detected at line 81)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 82\n    code = exec_context.replace(\"def ecdf(x):\n                                ^\nSyntaxError: unterminated string literal (detected at line 82)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 83,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndef ecdf(x):\n    # Sort the input array\n    sorted_x = jnp.sort(x)\n    # Calculate the ECDF values\n    ecdf_values = jnp.arange(1, len(sorted_x) + 1) / len(sorted_x)\n    return lambda y: ecdf_values[jnp.searchsorted(sorted_x, y, side='right') - 1]\n\n# Generate the ECDF function\necdf_function = ecdf(grades)\n\n# Apply the ECDF function to the eval array\nresult = ecdf_function(eval)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 95\n    code = exec_context.replace(\"def ecdf(x):\n                                ^\nSyntaxError: unterminated string literal (detected at line 95)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 97\n    code = exec_context.replace(\"def ecdf(x):\n                                ^\nSyntaxError: unterminated string literal (detected at line 97)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 84,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\n\n# Compute the empirical cumulative distribution function (ECDF)\ndef ecdf(x):\n    sorted_x = jnp.sort(x)\n    n = sorted_x.size\n    cdf = jnp.arange(1, n + 1) / n\n    return sorted_x, cdf\n\n# Find the longest interval [low, high) such that ECDF(x) < threshold\ndef find_interval(x, threshold):\n    sorted_x, cdf = ecdf(x)\n    valid_indices = jnp.where(cdf < threshold)[0]\n    \n    if valid_indices.size == 0:\n        return None, None  # No valid interval found\n    \n  ",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 97\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 97)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 103\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 103)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 85,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nnum_ones = int(size * one_ratio)\nnum_zeros = size - num_ones\nnums = jnp.concatenate((jnp.ones(num_ones), jnp.zeros(num_zeros)))\nnums = jnp.random.permutation(nums)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 48\n    code = exec_context.replace(\"num_ones = int(size * one_ratio)\n                                ^\nSyntaxError: unterminated string literal (detected at line 48)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 48\n    code = exec_context.replace(\"num_ones = int(size * one_ratio)\n                                ^\nSyntaxError: unterminated string literal (detected at line 48)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 86,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na_np = jnp.array(a.numpy())\nEND SOLUTION",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'torch'\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"a_np = jnp.array(a.numpy())\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 87,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na_pt = torch.tensor(a)",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'torch'\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'torch'\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 88,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na_np = jnp.array(a.numpy())",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'tensorflow'\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'tensorflow'\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 89,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na_tf = tf.convert_to_tensor(a)",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'tensorflow'\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'tensorflow'\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 90,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.argsort(-a)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 91,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.argsort(a).tolist()\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 92,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.argsort(a)[-N:][::-1]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 93,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.linalg.matrix_power(A, n)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 94,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a.reshape(2, 2, -1, 2).transpose(0, 2, 1, 3).reshape(-1, 2, 2)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 95,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nfrom jax import numpy as jnp\n\ndef extract_patches(arr, patch_size):\n    patches = []\n    rows, cols = arr.shape\n    for i in range(rows - patch_size + 1):\n        for j in range(cols - patch_size + 1):\n            patches.append(arr[i:i + patch_size, j:j + patch_size])\n    return jnp.array(patches)\n\nresult = extract_patches(a, 2)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 51\n    code = exec_context.replace(\"from jax import numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 51)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 53\n    code = exec_context.replace(\"from jax import numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 53)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 96,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a.reshape(2, 2, -1, 2).transpose(0, 2, 1, 3).reshape(-1, 2, 2)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 97,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\n\n# Calculate the shape of the output patches\nrows, cols = a.shape\npatch_rows = rows // patch_size\npatch_cols = cols // patch_size\n\n# Reshape and extract patches\nresult = a[:patch_rows * patch_size, :patch_cols * patch_size].reshape(patch_rows, patch_size, patch_cols, patch_size).swapaxes(1, 2).reshape(-1, patch_size, patch_size)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 67\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 67)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 69\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 69)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 98,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a.reshape(h, -1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 99,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\n\n# Calculate the shape of the output\nrows, cols = a.shape\nnew_rows = rows // patch_size\nnew_cols = cols // patch_size\n\n# Reshape and extract patches\nresult = a[:new_rows * patch_size, :new_cols * patch_size].reshape(new_rows, patch_size, new_cols, patch_size).swapaxes(1, 2).reshape(-1, patch_size, patch_size)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 69\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 69)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 71\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 71)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 100,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[:, low:high]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 101,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[low:high]",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 102,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[:, low:min(high, a.shape[1])]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 103,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.array(eval(string))",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 104,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.exp(jnp.random.uniform(jnp.log(min), jnp.log(max), n))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 105,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.exp(jnp.random.uniform(min, max, n))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 106,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\n    # Generate uniform samples in the log space\n    log_min = jnp.log(min)\n    log_max = jnp.log(max)\n    uniform_samples = jnp.random.uniform(log_min, log_max, n)\n    \n    # Transform back to the original scale\n    result = jnp.exp(uniform_samples)\n    return result\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 53\n    code = exec_context.replace(\"    # Generate uniform samples in the log space\n                                ^\nSyntaxError: unterminated string literal (detected at line 53)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"# Generate uniform samples in the log space\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 107,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nB = pd.Series(index=A.index, dtype=float)\nB[0] = a * A[0]\nfor t in range(1, len(A)):\n    B[t] = a * A[t] + b * B[t-1]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 63\n    code = exec_context.replace(\"B = pd.Series(index=A.index, dtype=float)\n                                ^\nSyntaxError: unterminated string literal (detected at line 63)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 63\n    code = exec_context.replace(\"B = pd.Series(index=A.index, dtype=float)\n                                ^\nSyntaxError: unterminated string literal (detected at line 63)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 108,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nB = jnp.zeros(len(A))\nB = B.at[0].set(a * A[0])\n\nfor t in range(1, len(A)):\n    if t == 1:\n        B = B.at[t].set(a * A[t] + b * B[t-1])\n    else:\n        B = B.at[t].set(a * A[t] + b * B[t-1] + c * B[t-2])\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 69\n    code = exec_context.replace(\"B = jnp.zeros(len(A))\n                                ^\nSyntaxError: unterminated string literal (detected at line 69)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 70\n    code = exec_context.replace(\"B = jnp.zeros(len(A))\n                                ^\nSyntaxError: unterminated string literal (detected at line 70)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 109,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.empty((0,))",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 110,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.empty((3, 0))",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 111,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = index[0] + dims[0] * (index[1] + dims[1] * index[2])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 112,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.ravel_multi_index(index, dims, order='C')\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 113,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\ndf = pd.DataFrame(data=values.astype(object), index=index, columns=columns)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 114,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.bincount(accmap, weights=a)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 115,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([jnp.max(a[index == i]) for i in jnp.unique(index)])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 116,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.bincount(accmap + 1, weights=a)  # Shift indices to be non-negative\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 117,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([jnp.min(a[index == i]) for i in jnp.unique(index)])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 118,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nz = jnp.add(jnp.array(x), jnp.array(y))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 119,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jax.numpy.random.choice(len(lista_elegir), samples, p=probabilit)\nselected_samples = [lista_elegir[i] for i in result]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 56\n    code = exec_context.replace(\"result = jax.numpy.random.choice(len(lista_elegir), samples, p=probabilit)\n                                ^\nSyntaxError: unterminated string literal (detected at line 56)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 56\n    code = exec_context.replace(\"result = jax.numpy.random.choice(len(lista_elegir), samples, p=probabilit)\n                                ^\nSyntaxError: unterminated string literal (detected at line 56)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 120,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nresult = jnp.pad(a, ((max(0, -low_index), max(0, high_index - a.shape[0])), \n                     (max(0, -low_index), max(0, high_index - a.shape[1]))), \n                  mode='constant', constant_values=0)[low_index:high_index, low_index:high_index]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 71\n    code = exec_context.replace(\"result = jnp.pad(a, ((max(0, -low_index), max(0, high_index - a.shape[0])),\n                                ^\nSyntaxError: unterminated string literal (detected at line 71)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 71\n    code = exec_context.replace(\"result = jnp.pad(a, ((max(0, -low_index), max(0, high_index - a.shape[0])), \n                                ^\nSyntaxError: unterminated string literal (detected at line 71)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 121,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = x[x >= 0]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 122,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = x[jnp.iscomplexobj(x)]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 123,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nn_bins = data.size // bin_size\nbinned_data = data[:n_bins * bin_size].reshape(n_bins, bin_size)\nbin_data_mean = jnp.mean(binned_data, axis=1)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"n_bins = data.size // bin_size\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"n_bins = data.size // bin_size\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 124,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nn_bins = data.size // bin_size\nbinned_data = data[:n_bins * bin_size].reshape(n_bins, bin_size)\nbin_data_max = jnp.max(binned_data, axis=1)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 47\n    code = exec_context.replace(\"n_bins = data.size // bin_size\n                                ^\nSyntaxError: unterminated string literal (detected at line 47)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 47\n    code = exec_context.replace(\"n_bins = data.size // bin_size\n                                ^\nSyntaxError: unterminated string literal (detected at line 47)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 125,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\n\n# Calculate the number of complete bins\nnum_bins = data.shape[1] // bin_size\n\n# Reshape the data to create bins and calculate the mean\nbin_data_mean = jnp.mean(data[:, :num_bins * bin_size].reshape(data.shape[0], num_bins, bin_size), axis=2)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 50\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 50)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 126,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nn = data.size\nnum_bins = n // bin_size\nbinned_data = data[-(num_bins * bin_size):].reshape(num_bins, bin_size)\nbin_data_mean = jnp.mean(binned_data, axis=1)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"n = data.size\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"n = data.size\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 127,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n# Calculate the number of bins\nnum_bins = data.shape[1] // bin_size\n\n# Create the binned data by slicing from the end\nbinned_data = data[:, -num_bins * bin_size:].reshape(data.shape[0], num_bins, bin_size)\n\n# Calculate the mean of each bin\nbin_data_mean = jnp.mean(binned_data, axis=2)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"# Calculate the number of bins\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"# Calculate the number of bins\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 128,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n# Calculate the number of bins that can fit in each row\nnum_bins = data.shape[1] // bin_size\n\n# Align the data to the end and reshape\naligned_data = data[:, -num_bins * bin_size:]\n\n# Reshape to create bins\nbinned_data = aligned_data.reshape(data.shape[0], num_bins, bin_size)\n\n# Calculate the mean of each bin\nbin_data_mean = jnp.mean(binned_data, axis=2)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"# Calculate the number of bins that can fit in each row\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 57\n    code = exec_context.replace(\"# Calculate the number of bins that can fit in each row\n                                ^\nSyntaxError: unterminated string literal (detected at line 57)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 129,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\ndef smoothclamp(x, x_min, x_max):\n    # Calculate the smooth transition points\n    if x < x_min:\n        return x_min\n    elif x > x_max:\n        return x_max\n    else:\n        t = (x - x_min) / (x_max - x_min)\n        return (1 - 3*t**2 + 2*t**3) * x + (3*t**2 - 2*t**3) * x_max + (t**3) * x_min\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 61\n    code = exec_context.replace(\"def smoothclamp(x, x_min, x_max):\n                                ^\nSyntaxError: unterminated string literal (detected at line 61)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 61\n    code = exec_context.replace(\"def smoothclamp(x, x_min, x_max):\n                                ^\nSyntaxError: unterminated string literal (detected at line 61)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 130,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 4,
     "solution_code": "```python\ndef smoothclamp(x, x_min, x_max, N):\n    def smoothstep(t):\n        return t * t * t * (t * (t * 6 - 15) + 10)\n\n    # Normalize x to the range [0, 1]\n    normalized_x = jnp.clip((x - x_min) / (x_max - x_min), 0, 1)\n    \n    # Apply the smoothstep function\n    smoothed_value = smoothstep(normalized_x)\n    \n    # Interpolate between min and max\n    return x_min + smoothed_value * (x_max - x_min)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 79\n    code = exec_context.replace(\"def smoothclamp(x, x_min, x_max, N):\n                                ^\nSyntaxError: unterminated string literal (detected at line 79)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 82\n    code = exec_context.replace(\"def smoothclamp(x, x_min, x_max, N):\n                                ^\nSyntaxError: unterminated string literal (detected at line 82)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 131,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.correlate(a, b, mode='full')[:len(a)]  # This gives the circular correlation\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 132,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.array(df.values.reshape(4, 15, 5))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 133,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.array(df.values.reshape(15, 4, 5))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 134,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([(jnp.array(list(map(int, f\"{num:0{m}b\")))) for num in a])\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"result = jnp.array([(jnp.array(list(map(int, f\"{num:0{m}b\")))) for num in a])\", solution)\n                                                                                                                         ^\nSyntaxError: closing parenthesis ')' does not match opening parenthesis '{'\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"result = jnp.array([(jnp.array(list(map(int, f\"{num:0{m}b\")))) for num in a])\", solution)\n                                                                                                                         ^\nSyntaxError: closing parenthesis ')' does not match opening parenthesis '{'\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 135,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\ndef int_to_binary_array(arr, m):\n    # Ensure the input is a JAX array\n    arr = jnp.asarray(arr)\n    # Create a mask to get the last m bits\n    mask = (1 << m) - 1\n    # Apply the mask and convert to binary\n    binary_arr = (arr & mask)[:, None] >> jnp.arange(m)[None, :]\n    # Get the last m bits and convert to binary (0 or 1)\n    return (binary_arr & 1).astype(jnp.uint8)\n\nresult = int_to_binary_array(a, m)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"def int_to_binary_array(arr, m):\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 55\n    code = exec_context.replace(\"def int_to_binary_array(arr, m):\n                                ^\nSyntaxError: unterminated string literal (detected at line 55)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 136,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n# Convert integers to binary representation\nbinary_arrays = jnp.array([(jnp.array(list(map(int, f\"{num:0{m}b}\"))) for num in a)])\n\n# Compute the exclusive OR across all rows\nresult = jnp.bitwise_xor.reduce(binary_arrays, axis=0)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 48\n    code = exec_context.replace(\"# Convert integers to binary representation\n                                ^\nSyntaxError: unterminated string literal (detected at line 48)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"# Convert integers to binary representation\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 137,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nmean = jnp.mean(a)\nstd_dev = jnp.std(a)\nresult = (mean - 3 * std_dev, mean + 3 * std_dev)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"mean = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"mean = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 138,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nmean = jnp.mean(a)\nstd_dev = jnp.std(a)\nresult = (mean - 2 * std_dev, mean + 2 * std_dev)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"mean = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"mean = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 139,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n    mu = jnp.mean(a)\n    sigma = jnp.std(a)\n    return (mu - 3 * sigma, mu + 3 * sigma)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"    mu = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"mu = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 140,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nmean = jnp.mean(a)\nstd_dev = jnp.std(a)\nlower_bound = mean - 2 * std_dev\nupper_bound = mean + 2 * std_dev\nresult = (a < lower_bound) | (a > upper_bound)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 47\n    code = exec_context.replace(\"mean = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 47)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 47\n    code = exec_context.replace(\"mean = jnp.mean(a)\n                                ^\nSyntaxError: unterminated string literal (detected at line 47)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 141,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\nimport jax.numpy.ma as ma\n\nDataArray = jnp.arange(-5.5, 10.5)\nmasked_data = ma.masked_where(DataArray < 0, DataArray)\npercentile = 50\nprob = jnp.percentile(masked_data.compressed(), percentile)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 50\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 50)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 51\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 51)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 142,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\na = a.at[zero_rows, :].set(0).at[:, zero_cols].set(0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 143,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\na = a.at[zero_rows, :].set(0).at[:, zero_cols].set(0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 144,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = a.at[1, :].set(0)  # Zero out the second row\na = a.at[:, 0].set(0)  # Zero out the first column\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"a = a.at[1, :].set(0)  # Zero out the second row\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"a = a.at[1, :].set(0)  # Zero out the second row\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 145,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nmask = jnp.equal(a, jnp.max(a, axis=1, keepdims=True))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 146,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nmask = a == jnp.min(a, axis=1, keepdims=True)\n",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 147,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.corrcoef(post, distance)[0, 1]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 148,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.einsum('ij,ik->jk', X, X).reshape(X.shape[1], X.shape[1], X.shape[0])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 149,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nX = jnp.array([jnp.linalg.cholesky(Y[i]).T for i in range(Y.shape[0])])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 150,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nis_contained = jnp.any(a == number)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 151,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nC = A[~jnp.isin(A, B)]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 152,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nC = A[jnp.isin(A, B)]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 153,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nC = A[(A > B[:-1][:, None]) & (A < B[1:][:, None])].flatten()\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 154,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = len(a) + 1 - rankdata(a).astype(int)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 155,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.argsort(jnp.argsort(-jnp.array(a))).astype(int)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 156,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n    ranks = rankdata(a, method='min')\n    return len(a) + 1 - ranks.astype(int)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"    ranks = rankdata(a, method='min')\n                                ^\nSyntaxError: unterminated string literal (detected at line 43)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"ranks = rankdata(a, method='min')\n                                ^\nSyntaxError: unterminated string literal (detected at line 43)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 157,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndists = jnp.stack((x_dists, y_dists), axis=-1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 158,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndists = jnp.stack((x_dists, y_dists), axis=-1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 159,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[:, second, :][:, :, third]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 160,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\narr = jnp.zeros((20, 10, 10, 2))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 161,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nl1 = jnp.sum(jnp.abs(X), axis=1)\nresult = X / l1[:, None]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 57\n    code = exec_context.replace(\"l1 = jnp.sum(jnp.abs(X), axis=1)\n                                ^\nSyntaxError: unterminated string literal (detected at line 57)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 57\n    code = exec_context.replace(\"l1 = jnp.sum(jnp.abs(X), axis=1)\n                                ^\nSyntaxError: unterminated string literal (detected at line 57)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 162,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = X / LA.norm(X, ord=2, axis=1, keepdims=True)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 163,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = X / jnp.max(jnp.abs(X), axis=1, keepdims=True)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 164,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nconditions = [df['a'].str.contains(target)]\nresult = jnp.select(conditions, choices, default=df['a'])\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"conditions = [df['a'].str.contains(target)]\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 42\n    code = exec_context.replace(\"conditions = [df['a'].str.contains(target)]\n                                ^\nSyntaxError: unterminated string literal (detected at line 42)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 165,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nfrom jax import vmap\n\ndef euclidean_distance(x, y):\n    return jnp.sqrt(jnp.sum((x - y) ** 2))\n\nresult = vmap(lambda x: vmap(lambda y: euclidean_distance(x, y))(a))(a)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 43)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 45\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 45)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 166,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.linalg.norm(a[:, None] - a[None, :], axis=-1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 167,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nfrom jax import vmap\n\n# Function to calculate the pairwise distance\ndef pairwise_distance(x, y):\n    return jnp.sqrt(jnp.sum((x - y) ** 2))\n\n# Create a distance matrix\ndistance_matrix = vmap(vmap(pairwise_distance))(a, a)\n\n# Extract the upper triangle of the distance matrix\nupper_triangle_indices = jnp.triu_indices(distance_matrix.shape[0])\nresult = distance_matrix[upper_triangle_indices]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 48\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 48)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 51\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 51)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 168,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nAVG = jnp.mean(jnp.array(A, dtype=jnp.float32))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 169,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nNA = jnp.where(NA == 'inf', jnp.inf, NA.astype(jnp.float32))\nAVG = jnp.nanmean(NA)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 46\n    code = exec_context.replace(\"NA = jnp.where(NA == 'inf', jnp.inf, NA.astype(jnp.float32))\n                                ^\nSyntaxError: unterminated string literal (detected at line 46)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 46\n    code = exec_context.replace(\"NA = jnp.where(NA == 'inf', jnp.inf, NA.astype(jnp.float32))\n                                ^\nSyntaxError: unterminated string literal (detected at line 46)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 170,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nNA = jnp.asarray([float(x) if x != 'jnp.inf' else jnp.inf for x in A])\nAVG = jnp.mean(NA)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 46\n    code = exec_context.replace(\"NA = jnp.asarray([float(x) if x != 'jnp.inf' else jnp.inf for x in A])\n                                ^\nSyntaxError: unterminated string literal (detected at line 46)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 46\n    code = exec_context.replace(\"NA = jnp.asarray([float(x) if x != 'jnp.inf' else jnp.inf for x in A])\n                                ^\nSyntaxError: unterminated string literal (detected at line 46)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 171,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nmask = (a != 0)  # Create a mask for non-zero values\nfiltered = a[mask]  # Filter out zeros\nresult = filtered[jnp.concatenate(([True], filtered[1:] != filtered[:-1]))]  # Remove adjacent duplicates\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"mask = (a != 0)  # Create a mask for non-zero values\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"mask = (a != 0)  # Create a mask for non-zero values\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 172,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nnon_zero = a[a != 0]\nresult = non_zero[jnp.concatenate(([True], non_zero[1:] != non_zero[:-1]))]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"non_zero = a[a != 0]\n                                ^\nSyntaxError: unterminated string literal (detected at line 43)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 43\n    code = exec_context.replace(\"non_zero = a[a != 0]\n                                ^\nSyntaxError: unterminated string literal (detected at line 43)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 173,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\nimport pandas as pd\n\nlat = jnp.array([[10, 20, 30],\n                 [20, 11, 33],\n                 [21, 20, 10]])\n\nlon = jnp.array([[100, 102, 103],\n                 [105, 101, 102],\n                 [100, 102, 103]])\n\nval = jnp.array([[17, 2, 11],\n                 [86, 84, 1],\n                 [9, 5, 10]])\n\n# Flatten the arrays and create a DataFrame\ndf = pd.DataFrame({\n    'lat': lat.flatten(),\n    'lon': lon.flatten(),\n    'val': val.flatten()\n})\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 65\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 65)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 69\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 69)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 174,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\n    import pandas as pd\n\n    # Stack the arrays and reshape them\n    lat_flat = lat.flatten()\n    lon_flat = lon.flatten()\n    val_flat = val.flatten()\n\n    # Create a DataFrame\n    df = pd.DataFrame({'lat': lat_flat, 'lon': lon_flat, 'val': val_flat})\n    \n    return df\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 53\n    code = exec_context.replace(\"    import pandas as pd\n                                ^\nSyntaxError: unterminated string literal (detected at line 53)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 56\n    code = exec_context.replace(\"import pandas as pd\n                                ^\nSyntaxError: unterminated string literal (detected at line 56)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 175,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nimport jax.numpy as jnp\nimport pandas as pd\n\nlat_flat = lat.flatten()\nlon_flat = lon.flatten()\nval_flat = val.flatten()\n\ndf = pd.DataFrame({'lat': lat_flat, 'lon': lon_flat, 'val': val_flat})\ndf['maximum'] = df[['lat', 'lon', 'val']].max(axis=1)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 52\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 52)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 176,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nfrom jax import vmap\n\ndef get_window(a, i, j, size):\n    h, w = size\n    return a[max(0, i-h//2):min(a.shape[0], i+h//2+1), max(0, j-w//2):min(a.shape[1], j+w//2+1)]\n\nresult = vmap(lambda i, j: get_window(a, i, j, size))(jnp.arange(a.shape[0])[:, None], jnp.arange(a.shape[1]))\nresult = result.reshape(-1).tolist()\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 57\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 57)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 59\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 59)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 177,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nfrom jax import vmap\n\ndef get_window(a, center, size):\n    h, w = size\n    r, c = center\n    return a[max(0, r - h // 2):min(a.shape[0], r + h // 2 + 1),\n              max(0, c - w // 2):min(a.shape[1], c + w // 2 + 1)]\n\ncenters = jnp.array(jnp.meshgrid(jnp.arange(a.shape[0]), jnp.arange(a.shape[1]), indexing='ij')).reshape(2, -1).T\nresult = vmap(lambda center: get_window(a, center, size))(centers)\nresult = result.reshape(a.shape[0], a.shape[1]).tolist()\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 60\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 60)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 62\n    code = exec_context.replace(\"from jax import vmap\n                                ^\nSyntaxError: unterminated string literal (detected at line 62)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 178,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.mean(a).real + 0j  # Take the real part to avoid NaN in the imaginary part\nEND SOLUTION",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 38\n    code = exec_context.replace(\"result = jnp.mean(a).real + 0j  # Take the real part to avoid NaN in the imaginary part\n                                ^\nSyntaxError: unterminated string literal (detected at line 38)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 179,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\n    result = jnp.where(jnp.isinf(a), jnp.inf, jnp.mean(a))\n    return result\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 40\n    code = exec_context.replace(\"    result = jnp.where(jnp.isinf(a), jnp.inf, jnp.mean(a))\n                                ^\nSyntaxError: unterminated string literal (detected at line 40)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 40\n    code = exec_context.replace(\"result = jnp.where(jnp.isinf(a), jnp.inf, jnp.mean(a))\n                                ^\nSyntaxError: unterminated string literal (detected at line 40)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 180,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = Z[tuple(slice(None) if i < Z.ndim - 1 else slice(-1, None) for i in range(Z.ndim))]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 181,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.index_exp[-1, *([slice(None)] * (a.ndim - 1))]]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 182,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nresult = any(jnp.array_equal(c, cnt) for cnt in CNTS)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 183,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nresult = any(jnp.all(jnp.isnan(c) == jnp.isnan(cnt)) & jnp.all(c == cnt) for cnt in CNTS)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 184,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nf = intp.interp2d(jnp.arange(a.shape[0]), jnp.arange(a.shape[1]), a, kind='linear')\nresult = f(x_new, y_new)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"f = intp.interp2d(jnp.arange(a.shape[0]), jnp.arange(a.shape[1]), a, kind='linear')\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 44\n    code = exec_context.replace(\"f = intp.interp2d(jnp.arange(a.shape[0]), jnp.arange(a.shape[1]), a, kind='linear')\n                                ^\nSyntaxError: unterminated string literal (detected at line 44)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 185,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndf[name] = df.groupby('D')['Q'].cumsum()\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 186,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\ni = jnp.diag(i)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 187,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\na = jnp.where(jnp.eye(a.shape[0], dtype=bool), a, 0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 188,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nt0 = pd.to_datetime(start)\ntf = pd.to_datetime(end)\ntimestamps = pd.to_datetime(jnp.linspace(t0.value, tf.value, n))\nresult = pd.DatetimeIndex(timestamps)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 53\n    code = exec_context.replace(\"t0 = pd.to_datetime(start)\n                                ^\nSyntaxError: unterminated string literal (detected at line 53)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 53\n    code = exec_context.replace(\"t0 = pd.to_datetime(start)\n                                ^\nSyntaxError: unterminated string literal (detected at line 53)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 189,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.where((x == a) & (y == b), jnp.arange(len(x)), -1)[0].max()",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 190,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nresult = jnp.where((x == a) & (y == b))[0]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 191,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nfrom jax import grad, jit\nfrom jax import numpy as jnp\nfrom jax.scipy.optimize import minimize\n\n# Define the function to approximate\ndef f(x, params):\n    a, b, c = params\n    return a * x ** 2 + b * x + c\n\n# Define the loss function (squared error)\ndef loss(params):\n    return jnp.sum((f(jnp.array(x), params) - jnp.array(y)) ** 2)\n\n# Initial guess for a, b, c\ninitial_guess = jnp.array([0.0, 0.0, 0.0])\n\n# Minimize the loss function\nresult = minimize(loss, initial_guess).x\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 55\n    code = exec_context.replace(\"from jax import grad, jit\n                                ^\nSyntaxError: unterminated string literal (detected at line 55)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 59\n    code = exec_context.replace(\"from jax import grad, jit\n                                ^\nSyntaxError: unterminated string literal (detected at line 59)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 192,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nfrom jax import grad, jit\nfrom jax import numpy as jnp\nfrom jax.scipy.optimize import minimize\n\ndef polynomial(params, x):\n    return jnp.polyval(params, x)\n\ndef loss(params, x, y):\n    return jnp.sum((polynomial(params, x) - y) ** 2)\n\ninitial_guess = jnp.zeros(degree + 1)\nresult = minimize(loss, initial_guess, args=(jnp.array(x), jnp.array(y)))\ncoefficients = result.x\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 53\n    code = exec_context.replace(\"from jax import grad, jit\n                                ^\nSyntaxError: unterminated string literal (detected at line 53)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 56\n    code = exec_context.replace(\"from jax import grad, jit\n                                ^\nSyntaxError: unterminated string literal (detected at line 56)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 193,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ndf = df.sub(temp_arr, axis=0)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 194,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.einsum('ijk,kl->ijl', A, B)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 195,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array(MinMaxScaler().fit_transform(a.reshape(-1, 1))).reshape(a.shape)",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 196,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nscaler = MinMaxScaler()\nresult = jnp.array(scaler.fit_transform(arr))\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 41\n    code = exec_context.replace(\"scaler = MinMaxScaler()\n                                ^\nSyntaxError: unterminated string literal (detected at line 41)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 41\n    code = exec_context.replace(\"scaler = MinMaxScaler()\n                                ^\nSyntaxError: unterminated string literal (detected at line 41)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 197,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([MinMaxScaler().fit_transform(matrix) for matrix in a])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 198,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\narr_temp = arr.copy()\nmask1 = arr_temp < -10\nmask2 = arr_temp >= 15\nmask3 = (arr_temp >= -10) & (arr_temp < 15)\n\narr = jnp.where(mask1, 0, jnp.where(mask2, 30, arr_temp + 5))\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 48\n    code = exec_context.replace(\"arr_temp = arr.copy()\n                                ^\nSyntaxError: unterminated string literal (detected at line 48)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 49\n    code = exec_context.replace(\"arr_temp = arr.copy()\n                                ^\nSyntaxError: unterminated string literal (detected at line 49)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 199,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nfor i in range(arr.shape[0]):\n    mask = arr[i] < n1[i]\n    mask2 = arr[i] >= n2[i]\n    arr[i, mask] = 0\n    arr[i, ~mask2] = 30\n    arr[i, ~mask & ~mask2] += 5\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 50\n    code = exec_context.replace(\"for i in range(arr.shape[0]):\n                                ^\nSyntaxError: unterminated string literal (detected at line 50)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 50\n    code = exec_context.replace(\"for i in range(arr.shape[0]):\n                                ^\nSyntaxError: unterminated string literal (detected at line 50)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 200,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\ntolerance = 1e-7\nresult = jnp.sum(jnp.abs(s1 - s2) > tolerance)\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 50\n    code = exec_context.replace(\"tolerance = 1e-7\n                                ^\nSyntaxError: unterminated string literal (detected at line 50)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 50\n    code = exec_context.replace(\"tolerance = 1e-7\n                                ^\nSyntaxError: unterminated string literal (detected at line 50)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 201,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.sum(jnp.isnan(s1) & jnp.isnan(s2)) + jnp.sum(~jnp.isnan(s1) & ~jnp.isnan(s2) & (jnp.abs(s1 - s2) > 1e-7))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 202,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 5,
     "solution_code": "```python\nresult = jnp.all(jnp.array([jnp.array_equal(a[0], arr) for arr in a]))\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 203,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 5,
     "solution_code": "```python\nresult = all(jnp.any(jnp.isnan(arr)) for arr in a)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 204,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), mode='constant')\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 205,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 4,
     "solution_code": "```python\nresult = jnp.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), mode='constant')\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 206,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 4,
     "solution_code": "```python\nresult = jnp.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), constant_values=element)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 207,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\n    padded_arr = jnp.zeros(shape)\n    padded_arr = padded_arr.at[:arr.shape[0], :arr.shape[1]].set(arr)\n    return padded_arr\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 45\n    code = exec_context.replace(\"    padded_arr = jnp.zeros(shape)\n                                ^\nSyntaxError: unterminated string literal (detected at line 45)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 45\n    code = exec_context.replace(\"padded_arr = jnp.zeros(shape)\n                                ^\nSyntaxError: unterminated string literal (detected at line 45)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 208,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 4,
     "solution_code": "```python\nimport jax.numpy as jnp\n\ndef zero_pad(array, target_shape):\n    pad_height = target_shape[0] - array.shape[0]\n    pad_width = target_shape[1] - array.shape[1]\n    \n    pad_top = pad_height // 2\n    pad_bottom = pad_height - pad_top\n    pad_left = pad_width // 2\n    pad_right = pad_width - pad_left\n    \n    padded_array = jnp.pad(array, ((pad_top, pad_bottom), (pad_left, pad_right)), mode='constant', constant_values=0)\n    return padded_array\n\na = jnp.ones((41, 12))\nshape = (93, 13)\nres",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 74\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 74)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 78\n    code = exec_context.replace(\"import jax.numpy as jnp\n                                ^\nSyntaxError: unterminated string literal (detected at line 78)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 209,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\na = a.reshape(a.shape[0] // 3, 3)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 210,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.arange(a.shape[0])[:, None], jnp.arange(a.shape[1]), b]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 211,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.arange(a.shape[0])[:, None], jnp.arange(a.shape[1]), b]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 212,
+    "perturbation_type": "Semantic",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.arange(a.shape[0])[:, None], jnp.arange(a.shape[1]), b]\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 213,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.sum(a[jnp.arange(a.shape[0])[:, None], jnp.arange(a.shape[1]), b])\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 214,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.sum(a, axis=2) - jnp.sum(a[jnp.arange(a.shape[0])[:, None], jnp.arange(a.shape[1]), b], axis=1)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 215,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 1,
     "solution_code": "```python\nresult = np.where((df['a'] > 1) & (df['a'] <= 4), df['b'], np.nan)\n```",
-    "status": "success",
-    "stdout": "",
-    "stderr": "",
-    "exit_code": 0
+    "status": "passed",
+    "docker_result": {
+      "status": "success",
+      "stdout": "",
+      "stderr": "",
+      "exit_code": 0
+    }
   },
   {
     "problem_id": 216,
+    "perturbation_type": "Origin",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nresult = im[jnp.any(im != 0, axis=1)][:, jnp.any(im != 0, axis=0)]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 32\n    if rows.shape[0] == 0:\nIndentationError: unexpected indent\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 32\n    if rows.shape[0] == 0:\nIndentationError: unexpected indent\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 217,
+    "perturbation_type": "Surface",
+    "library": "JAX",
     "test_case_count": 2,
     "solution_code": "```python\nnon_zero_rows = jnp.any(A != 0, axis=1)\nnon_zero_cols = jnp.any(A != 0, axis=0)\nresult = A[non_zero_rows][:, non_zero_cols]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"non_zero_rows = jnp.any(A != 0, axis=1)\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 54\n    code = exec_context.replace(\"non_zero_rows = jnp.any(A != 0, axis=1)\n                                ^\nSyntaxError: unterminated string literal (detected at line 54)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 218,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nnon_zero_rows = jnp.any(im != 0, axis=1)\nnon_zero_cols = jnp.any(im != 0, axis=0)\n\n# Get the indices of the rows and columns to keep\nrows_to_keep = jnp.where(non_zero_rows)[0]\ncols_to_keep = jnp.where(non_zero_cols)[0]\n\n# Slice the image to keep only the relevant rows and columns\nresult = im[rows_to_keep.min():rows_to_keep.max() + 1, cols_to_keep.min():cols_to_keep.max() + 1]\n\n# Check if the result is entirely non-black\nif jnp.all(result == 0):\n    result = jnp.array([])  # Return an e",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 68\n    code = exec_context.replace(\"non_zero_rows = jnp.any(im != 0, axis=1)\n                                ^\nSyntaxError: unterminated string literal (detected at line 68)\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 71\n    code = exec_context.replace(\"non_zero_rows = jnp.any(im != 0, axis=1)\n                                ^\nSyntaxError: unterminated string literal (detected at line 71)\n",
+      "exit_code": 1
+    }
   },
   {
     "problem_id": 219,
+    "perturbation_type": "Difficult-Rewrite",
+    "library": "JAX",
     "test_case_count": 3,
     "solution_code": "```python\nnon_zero_rows = jnp.any(im != 0, axis=1)\nnon_zero_cols = jnp.any(im != 0, axis=0)\n\nresult = im[jnp.ix_(non_zero_rows, non_zero_cols)]\n```",
-    "status": "error",
-    "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 34\n    if rows.shape[0] == 0:\nIndentationError: unexpected indent\n",
-    "exit_code": 1
+    "status": "failed",
+    "docker_result": {
+      "status": "error",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 34\n    if rows.shape[0] == 0:\nIndentationError: unexpected indent\n",
+      "exit_code": 1
+    }
   }
 ]

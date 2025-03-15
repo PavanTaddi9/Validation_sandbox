@@ -5,7 +5,7 @@ import traceback
 from typing import Dict, List, Any
 import concurrent.futures as cfuts
 from tqdm import tqdm
-import re
+from collections import defaultdict
 
 # ========================
 # CONFIGURATION
@@ -135,6 +135,7 @@ def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> Dict:
             except Exception as e:
                 detailed_results.append({
                     "problem_id": problem_id,
+                    "perturbation_type": problem["metadata"]["perturbation_type"],
                     "status": "preprocessing_error",
                     "error_type": type(e).__name__,
                     "error_message": str(e),
@@ -146,25 +147,21 @@ def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> Dict:
             result = future.result()
             problem_id = problem["metadata"]["problem_id"]
             test_case_cnt = problem["metadata"]["test_case_cnt"]
+            perturbation_type = problem["metadata"]["perturbation_type"]
             
             entry = {
                 "problem_id": problem_id,
+                "perturbation_type": perturbation_type,
                 "library": problem["metadata"]["library"],
                 "test_case_count": test_case_cnt,
                 "solution_code": answers.get(problem_id, "")[:500],
+                "status": "passed" if result["status"] == "success" else "failed",
                 "docker_result": result
             }
             
-            if result["status"] == "success":
+            if entry["status"] == "passed":
                 stats["passed_problems"] += 1
                 stats["passed_test_cases"] += test_case_cnt
-                entry["status"] = "passed"
-            else:
-                entry.update({
-                    "status": "failed",
-                    "error_type": "execution",
-                    "error_message": result["stderr"] or result["stdout"]
-                })
             
             detailed_results.append(entry)
 
@@ -173,8 +170,35 @@ def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> Dict:
         "statistics": stats
     }
 
+def analyze_perturbation_groups(detailed_results: List[Dict]) -> Dict:
+    """Analyze results by perturbation type"""
+    perturbation_groups = defaultdict(lambda: {
+        "total_problems": 0,
+        "passed_problems": 0,
+        "total_test_cases": 0,
+        "passed_test_cases": 0
+    })
+    
+    for result in detailed_results:
+        p_type = result["perturbation_type"]
+        group = perturbation_groups[p_type]
+        
+        group["total_problems"] += 1
+        group["total_test_cases"] += result["test_case_count"]
+        
+        if result["status"] == "passed":
+            group["passed_problems"] += 1
+            group["passed_test_cases"] += result["test_case_count"]
+    
+    # Calculate percentages
+    for p_type, data in perturbation_groups.items():
+        data["problem_accuracy"] = (data["passed_problems"] / data["total_problems"]) * 100 if data["total_problems"] > 0 else 0
+        data["test_case_accuracy"] = (data["passed_test_cases"] / data["total_test_cases"]) * 100 if data["total_test_cases"] > 0 else 0
+    
+    return dict(perturbation_groups)
+
 def save_reports(results: Dict):
-    """Save both detailed and summary reports"""
+    """Save all reports including perturbation analysis"""
     os.makedirs(os.path.join(CONFIG["base_dir"], CONFIG["results_dir"]), exist_ok=True)
     
     # Save detailed error report
@@ -199,8 +223,25 @@ Test Cases Passed: {test_case_acc:.1f}%"""
     with open(summary_path, 'w') as f:
         f.write(summary)
     
-    print(f"Reports saved to:\n- {detailed_path}\n- {summary_path}")
-    print("\n" + summary)
+    # Perform perturbation analysis
+    perturbation_analysis = analyze_perturbation_groups(results["detailed_results"])
+    
+    # Save perturbation analysis
+    perturbation_path = os.path.join(CONFIG["base_dir"], CONFIG["results_dir"], 
+                                  f"{CONFIG['model_name']}_perturbation_analysis.json")
+    with open(perturbation_path, 'w') as f:
+        json.dump(perturbation_analysis, f, indent=2)
+    
+    # Print perturbation analysis
+    print("\nPerturbation Type Analysis:")
+    for p_type, data in perturbation_analysis.items():
+        print(f"\n{p_type}:")
+        print(f"  Total Problems: {data['total_problems']}")
+        print(f"  Passed Problems: {data['passed_problems']} ({data['problem_accuracy']:.1f}%)")
+        print(f"  Total Test Cases: {data['total_test_cases']}")
+        print(f"  Passed Test Cases: {data['passed_test_cases']} ({data['test_case_accuracy']:.1f}%)")
+    
+    print(f"\nReports saved to:\n- {detailed_path}\n- {summary_path}\n- {perturbation_path}")
 
 if __name__ == "__main__":
     try:

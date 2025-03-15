@@ -1,0 +1,34 @@
+{
+  "Origin": {
+    "total_problems": 95,
+    "passed_problems": 64,
+    "total_test_cases": 181,
+    "passed_test_cases": 124,
+    "problem_accuracy": 67.36842105263158,
+    "test_case_accuracy": 68.50828729281768
+  },
+  "Semantic": {
+    "total_problems": 53,
+    "passed_problems": 38,
+    "total_test_cases": 104,
+    "passed_test_cases": 78,
+    "problem_accuracy": 71.69811320754717,
+    "test_case_accuracy": 75.0
+  },
+  "Difficult-Rewrite": {
+    "total_problems": 50,
+    "passed_problems": 23,
+    "total_test_cases": 117,
+    "passed_test_cases": 53,
+    "problem_accuracy": 46.0,
+    "test_case_accuracy": 45.2991452991453
+  },
+  "Surface": {
+    "total_problems": 22,
+    "passed_problems": 10,
+    "total_test_cases": 44,
+    "passed_test_cases": 23,
+    "problem_accuracy": 45.45454545454545,
+    "test_case_accuracy": 52.27272727272727
+  }
+}
