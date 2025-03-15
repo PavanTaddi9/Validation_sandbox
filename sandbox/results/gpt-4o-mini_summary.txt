@@ -1,0 +1,5 @@
+Evaluation Report for gpt-4o-mini
+Total Problems: 220
+Passed Problems: 137
+Problem Accuracy: 62.3%
+Test Cases Passed: 62.8%

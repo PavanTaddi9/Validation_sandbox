@@ -3,10 +3,10 @@
     "problem_id": 0,
     "test_case_count": 4,
     "solution_code": "```python\nresult = a.shape\nEND SOLUTION",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 1,
@@ -84,55 +84,55 @@
     "problem_id": 9,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.percentile(a, p)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 10,
     "test_case_count": 2,
     "solution_code": "```python\nB = A.reshape(-1, ncol)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 11,
     "test_case_count": 2,
     "solution_code": "```python\nB = A.reshape(nrow, -1)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 12,
     "test_case_count": 2,
     "solution_code": "```python\nB = A[:(A.size // ncol) * ncol].reshape(-1, ncol)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 13,
     "test_case_count": 2,
     "solution_code": "```python\nB = jnp.reshape(jnp.flip(A), (-1, ncol))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 14,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.concatenate((jnp.full((shift,), jnp.nan), a[:-shift])) if shift > 0 else jnp.concatenate((a[-shift:], jnp.full((-shift,), jnp.nan)))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 15,
@@ -237,28 +237,28 @@
     "problem_id": 26,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array(a)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 27,
     "test_case_count": 2,
     "solution_code": "```python\na = a[:, permutation]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 28,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[permutation]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 29,
@@ -327,10 +327,10 @@
     "problem_id": 36,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.pad(A, (0, length - A.size), mode='constant')\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 37,
@@ -390,37 +390,37 @@
     "problem_id": 43,
     "test_case_count": 2,
     "solution_code": "```python\nresult = (a + b + c) / 3",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 44,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.maximum(jnp.maximum(a, b), c)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 45,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.diag_indices(a.shape[0], k=a.shape[1]-1)]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 46,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.arange(a.shape[0]), a.shape[1] - 1 - jnp.arange(a.shape[0])]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 47,
@@ -444,19 +444,19 @@
     "problem_id": 49,
     "test_case_count": 1,
     "solution_code": "```python\nresult = X.flatten().tolist()\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 50,
     "test_case_count": 1,
     "solution_code": "```python\nresult = X.flatten(order='C').tolist()\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 51,
@@ -471,19 +471,19 @@
     "problem_id": 52,
     "test_case_count": 1,
     "solution_code": "```python\nresult = [X[i, j] for j in range(X.shape[1]) for i in range(X.shape[0])]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 53,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([int(digit) for digit in mystr])\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 54,
@@ -525,10 +525,10 @@
     "problem_id": 58,
     "test_case_count": 1,
     "solution_code": "```python\nresult = a.shape[1]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 59,
@@ -570,10 +570,10 @@
     "problem_id": 63,
     "test_case_count": 3,
     "solution_code": "```python\noutput = jnp.concatenate([A[~jnp.isin(A, B).any(axis=1)], B[~jnp.isin(B, A).any(axis=1)]])\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 64,
@@ -651,73 +651,73 @@
     "problem_id": 72,
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.insert(a, pos, element)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 73,
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.insert(a, pos, jnp.array(element), axis=0)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 74,
     "test_case_count": 2,
     "solution_code": "```python\n    return jnp.concatenate((a[:pos], jnp.array([element]), a[pos:]))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 75,
     "test_case_count": 2,
     "solution_code": "```python\na = jnp.insert(a, pos, element, axis=0)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 76,
     "test_case_count": 1,
     "solution_code": "```python\nresult = [jnp.array(arr) for arr in array_of_arrays]  # Deep copy each array in the list\nEND SOLUTION",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 77,
     "test_case_count": 5,
     "solution_code": "```python\nresult = jnp.all(a == a[0], axis=0)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 78,
     "test_case_count": 5,
     "solution_code": "```python\nresult = jnp.all(a == a[:, 0:1], axis=1)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 79,
     "test_case_count": 5,
     "solution_code": "```python\n    return jnp.all(jnp.equal(a, a[0, :]), axis=1).all()\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 80,
@@ -779,7 +779,7 @@
     "solution_code": "```python\na_np = jnp.array(a.numpy())\nEND SOLUTION",
     "status": "error",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'torch'\n",
     "exit_code": 1
   },
   {
@@ -788,7 +788,7 @@
     "solution_code": "```python\na_pt = torch.tensor(a)",
     "status": "error",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'torch'\n",
     "exit_code": 1
   },
   {
@@ -797,7 +797,7 @@
     "solution_code": "```python\na_np = jnp.array(a.numpy())",
     "status": "error",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'tensorflow'\n",
     "exit_code": 1
   },
   {
@@ -806,7 +806,7 @@
     "solution_code": "```python\na_tf = tf.convert_to_tensor(a)",
     "status": "error",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'tensorflow'\n",
     "exit_code": 1
   },
   {
@@ -840,10 +840,10 @@
     "problem_id": 93,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.linalg.matrix_power(A, n)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 94,
@@ -903,28 +903,28 @@
     "problem_id": 100,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[:, low:high]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 101,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[low:high]",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 102,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[:, low:min(high, a.shape[1])]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 103,
@@ -984,19 +984,19 @@
     "problem_id": 109,
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.empty((0,))",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 110,
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.empty((3, 0))",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 111,
@@ -1020,10 +1020,10 @@
     "problem_id": 113,
     "test_case_count": 1,
     "solution_code": "```python\ndf = pd.DataFrame(data=values.astype(object), index=index, columns=columns)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 114,
@@ -1092,19 +1092,19 @@
     "problem_id": 121,
     "test_case_count": 2,
     "solution_code": "```python\nresult = x[x >= 0]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 122,
     "test_case_count": 2,
     "solution_code": "```python\nresult = x[jnp.iscomplexobj(x)]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 123,
@@ -1182,28 +1182,28 @@
     "problem_id": 131,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.correlate(a, b, mode='full')[:len(a)]  # This gives the circular correlation\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 132,
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.array(df.values.reshape(4, 15, 5))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 133,
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.array(df.values.reshape(15, 4, 5))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 134,
@@ -1281,19 +1281,19 @@
     "problem_id": 142,
     "test_case_count": 1,
     "solution_code": "```python\na = a.at[zero_rows, :].set(0).at[:, zero_cols].set(0)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 143,
     "test_case_count": 1,
     "solution_code": "```python\na = a.at[zero_rows, :].set(0).at[:, zero_cols].set(0)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 144,
@@ -1335,55 +1335,55 @@
     "problem_id": 148,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.einsum('ij,ik->jk', X, X).reshape(X.shape[1], X.shape[1], X.shape[0])\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 149,
     "test_case_count": 2,
     "solution_code": "```python\nX = jnp.array([jnp.linalg.cholesky(Y[i]).T for i in range(Y.shape[0])])\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 150,
     "test_case_count": 3,
     "solution_code": "```python\nis_contained = jnp.any(a == number)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 151,
     "test_case_count": 2,
     "solution_code": "```python\nC = A[~jnp.isin(A, B)]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 152,
     "test_case_count": 2,
     "solution_code": "```python\nC = A[jnp.isin(A, B)]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 153,
     "test_case_count": 3,
     "solution_code": "```python\nC = A[(A > B[:-1][:, None]) & (A < B[1:][:, None])].flatten()\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 154,
@@ -1416,37 +1416,37 @@
     "problem_id": 157,
     "test_case_count": 2,
     "solution_code": "```python\ndists = jnp.stack((x_dists, y_dists), axis=-1)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 158,
     "test_case_count": 2,
     "solution_code": "```python\ndists = jnp.stack((x_dists, y_dists), axis=-1)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 159,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[:, second, :][:, :, third]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 160,
     "test_case_count": 1,
     "solution_code": "```python\narr = jnp.zeros((20, 10, 10, 2))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 161,
@@ -1623,37 +1623,37 @@
     "problem_id": 180,
     "test_case_count": 2,
     "solution_code": "```python\nresult = Z[tuple(slice(None) if i < Z.ndim - 1 else slice(-1, None) for i in range(Z.ndim))]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 181,
     "test_case_count": 2,
     "solution_code": "```python\nresult = a[jnp.index_exp[-1, *([slice(None)] * (a.ndim - 1))]]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 182,
     "test_case_count": 3,
     "solution_code": "```python\nresult = any(jnp.array_equal(c, cnt) for cnt in CNTS)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 183,
     "test_case_count": 3,
     "solution_code": "```python\nresult = any(jnp.all(jnp.isnan(c) == jnp.isnan(cnt)) & jnp.all(c == cnt) for cnt in CNTS)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 184,
@@ -1668,19 +1668,19 @@
     "problem_id": 185,
     "test_case_count": 2,
     "solution_code": "```python\ndf[name] = df.groupby('D')['Q'].cumsum()\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 186,
     "test_case_count": 1,
     "solution_code": "```python\ni = jnp.diag(i)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 187,
@@ -1704,19 +1704,19 @@
     "problem_id": 189,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.where((x == a) & (y == b), jnp.arange(len(x)), -1)[0].max()",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 190,
     "test_case_count": 3,
     "solution_code": "```python\nresult = jnp.where((x == a) & (y == b))[0]\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 191,
@@ -1740,28 +1740,28 @@
     "problem_id": 193,
     "test_case_count": 2,
     "solution_code": "```python\ndf = df.sub(temp_arr, axis=0)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 194,
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.einsum('ijk,kl->ijl', A, B)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 195,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array(MinMaxScaler().fit_transform(a.reshape(-1, 1))).reshape(a.shape)",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'sklearn'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 196,
@@ -1776,10 +1776,10 @@
     "problem_id": 197,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.array([MinMaxScaler().fit_transform(matrix) for matrix in a])\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 3, in <module>\nModuleNotFoundError: No module named 'sklearn'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 198,
@@ -1812,55 +1812,55 @@
     "problem_id": 201,
     "test_case_count": 2,
     "solution_code": "```python\nresult = jnp.sum(jnp.isnan(s1) & jnp.isnan(s2)) + jnp.sum(~jnp.isnan(s1) & ~jnp.isnan(s2) & (jnp.abs(s1 - s2) > 1e-7))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 202,
     "test_case_count": 5,
     "solution_code": "```python\nresult = jnp.all(jnp.array([jnp.array_equal(a[0], arr) for arr in a]))\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 203,
     "test_case_count": 5,
     "solution_code": "```python\nresult = all(jnp.any(jnp.isnan(arr)) for arr in a)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 204,
     "test_case_count": 1,
     "solution_code": "```python\nresult = jnp.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), mode='constant')\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 205,
     "test_case_count": 4,
     "solution_code": "```python\nresult = jnp.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), mode='constant')\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 206,
     "test_case_count": 4,
     "solution_code": "```python\nresult = jnp.pad(a, ((0, shape[0] - a.shape[0]), (0, shape[1] - a.shape[1])), constant_values=element)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 207,
@@ -1938,10 +1938,10 @@
     "problem_id": 215,
     "test_case_count": 1,
     "solution_code": "```python\nresult = np.where((df['a'] > 1) & (df['a'] <= 4), df['b'], np.nan)\n```",
-    "status": "error",
+    "status": "success",
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'pandas'\n",
-    "exit_code": 1
+    "stderr": "",
+    "exit_code": 0
   },
   {
     "problem_id": 216,

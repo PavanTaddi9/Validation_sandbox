@@ -98,10 +98,16 @@ def execute_in_docker(code: str) -> Dict[str, Any]:
             "exit_code": -1
         }
 
-def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> List[Dict]:
-    """Main evaluation with detailed error tracking"""
-    results = []
-    
+def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> Dict:
+    """Main evaluation with statistics tracking"""
+    detailed_results = []
+    stats = {
+        'total_problems': 0,
+        'passed_problems': 0,
+        'total_test_cases': 0,
+        'passed_test_cases': 0
+    }
+
     with cfuts.ThreadPoolExecutor(max_workers=CONFIG["max_workers"]) as executor:
         futures = []
         for problem in dataset:
@@ -112,8 +118,12 @@ def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> List[Dict
                 clean_code = sanitize_code(raw_code)
                 test_program = build_test_program(problem, clean_code)
                 futures.append((problem, executor.submit(execute_in_docker, test_program)))
+                
+                # Update statistics
+                stats['total_problems'] += 1
+                stats['total_test_cases'] += problem["metadata"]["test_case_cnt"]
             except Exception as e:
-                results.append({
+                detailed_results.append({
                     "problem_id": problem_id,
                     "error": f"Preparation failed: {str(e)}",
                     "trace": traceback.format_exc()
@@ -130,26 +140,49 @@ def evaluate_problems(dataset: List[Dict], answers: Dict[int, str]) -> List[Dict
                 **result
             }
             
-            results.append(error_info)
+            if result["status"] == "success":
+                stats['passed_problems'] += 1
+                stats['passed_test_cases'] += problem["metadata"]["test_case_cnt"]
+            
+            detailed_results.append(error_info)
     
-    return results
+    return {
+        'detailed_results': detailed_results,
+        'statistics': stats
+    }
 
-def save_detailed_report(results: List[Dict]):
-    """Generate comprehensive error report"""
-    report_path = os.path.join(
-        CONFIG["base_dir"],
-        CONFIG["results_dir"],
-        f"{CONFIG['model_name']}_detailed_report.json"
-    )
+def generate_summary_report(stats: Dict) -> str:
+    """Generate formatted summary report"""
+    problem_acc = (stats['passed_problems'] / stats['total_problems']) * 100 if stats['total_problems'] > 0 else 0
+    test_case_acc = (stats['passed_test_cases'] / stats['total_test_cases']) * 100 if stats['total_test_cases'] > 0 else 0
     
-    with open(report_path, 'w') as f:
-        json.dump(results, f, indent=2)
-    
-    print(f"Report saved to: {report_path}")
+    return f"""Evaluation Report for {CONFIG['model_name']}
+Total Problems: {stats['total_problems']}
+Passed Problems: {stats['passed_problems']}
+Problem Accuracy: {problem_acc:.1f}%
+Test Cases Passed: {test_case_acc:.1f}%"""
 
-if __name__ == "__main__":
+def save_reports(results: Dict):
+    """Save both detailed and summary reports"""
+    # Create results directory
     os.makedirs(os.path.join(CONFIG["base_dir"], CONFIG["results_dir"]), exist_ok=True)
     
+    # Save detailed report
+    detailed_path = os.path.join(CONFIG["base_dir"], CONFIG["results_dir"], 
+                              f"{CONFIG['model_name']}_detailed_report.json")
+    with open(detailed_path, 'w') as f:
+        json.dump(results['detailed_results'], f, indent=2)
+    
+    # Save summary report
+    summary_path = os.path.join(CONFIG["base_dir"], CONFIG["results_dir"], 
+                             f"{CONFIG['model_name']}_summary.txt")
+    with open(summary_path, 'w') as f:
+        f.write(generate_summary_report(results['statistics']))
+    
+    print(f"Reports saved to:\n- {detailed_path}\n- {summary_path}")
+    print("\n" + generate_summary_report(results['statistics']))
+
+if __name__ == "__main__":
     try:
         print("Loading dataset...")
         dataset = load_dataset()
@@ -160,8 +193,8 @@ if __name__ == "__main__":
         print("Starting evaluation...")
         results = evaluate_problems(dataset, answers)
         
-        print("Saving report...")
-        save_detailed_report(results)
+        print("Saving reports...")
+        save_reports(results)
         
     except Exception as e:
         print(f"Fatal error: {str(e)}")

@@ -1,8 +1,10 @@
 FROM python:3.11-slim
 
-# Install dependencies
+# Install system dependencies
 RUN apt-get update && apt-get install -y libopenblas-dev && rm -rf /var/lib/apt/lists/*
-RUN pip install jax==0.4.23 jaxlib==0.4.23 numpy==1.26.4
+
+# Install Python packages
+RUN pip install jax==0.4.23 jaxlib==0.4.23 numpy==1.26.4 pandas scikit-learn
 
 # Set up working directory
 WORKDIR /app
